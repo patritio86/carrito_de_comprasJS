@@ -1,16 +1,16 @@
-
+//Esta funcion  me imprime los objetos produtos de una lista en la consola.
 function imprimirProductos(array){
     for (obj of array) {
         console.log(obj);
         }
 }
-
+//Esta funcion me imprime los objetos productos con los atributos que quiera mostrar en un alert.
 function impProductos(array){
     let ListProducto= array.map((array)=>"Id: "+array.id+" "+"Nombre: "+ array.nombre+" "+" Tipo: "+array.tipo+ " "+"Cantidad:" +array.cantidad
     + " "+"Descripcion: " + array.desc+" "+"Precio: " + array.precio+" "+"Talle: " + array.talle);
     alert(ListProducto.join(" -|- "));
 }
-
+// esta funcion agrega al array carrito los productos cantidades de cada uno y el precio. 
 function agregarAlCarrito(seleccion, array){
     while(seleccion!="no"){
         let producto=parseInt(prompt("Ingrese el numero de Id del producto"));
@@ -101,7 +101,7 @@ function agregarAlCarrito(seleccion, array){
     }
     
 }
-
+//Esta funcion me devuelve en consola el producto la cantidad y el total del precio por esos productos.
 function totales(argumento,array){
     alert("gracias por la compra");
     array.forEach(carritoFinal => {
@@ -109,7 +109,7 @@ function totales(argumento,array){
         Total a pagar por los producto ${carritoFinal.unidades*carritoFinal.precio}`)
     });
 }
-
+//Esta funcion devuelve por consola el total a pagar por la compra.
 function totalFactura(array){
     const total=array.reduce((acumulador,el)=>acumulador+el.precio*el.unidades,0);
     console.log(`Total de la factura: ${total}`)
@@ -150,7 +150,7 @@ let carrito =[];
 // creo la variable booleana en false para ingresar al bucle.
 let ingresar=false;
 
-// Creo el bucle y un if para consultar si quiere ingresar o no cargo el carrito he imprimo la factura. 
+// Creo el bucle y un if para consultar si quiere ingresar o no, cargo el carrito he imprimo la factura con sus totales. 
 while(!ingresar){
     let op=prompt("desea ingresar a comprar");
     if(op=="si"){
