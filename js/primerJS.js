@@ -12,7 +12,7 @@ function impProductos(array){
 }
 // esta funcion agrega al array carrito los productos cantidades de cada uno y el precio. 
 function agregarAlCarrito(seleccion, array){
-    while(seleccion!="no"){
+    while(seleccion!="no".toUpperCase()){
         let producto=parseInt(prompt("Ingrese el numero de Id del producto"));
         let precio=0;
         switch(producto){
@@ -153,7 +153,7 @@ let ingresar=false;
 // Creo el bucle y un if para consultar si quiere ingresar o no, cargo el carrito he imprimo la factura con sus totales. 
 while(!ingresar){
     let op=prompt("desea ingresar a comprar");
-    if(op=="si"){
+    if(op=="si".toUpperCase()){
     alert("a continuacion lista de productos");
     imprimirProductos(Productos);
     impProductos(Productos);
